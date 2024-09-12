@@ -1,0 +1,57 @@
+:root {
+  --font-size: 16;
+  --font-family: "SUSE", sans-serif;
+  --font-weight: 300;
+  --board-background-color: #FCE5E5;
+  --text-color: #000;
+  --background-button-color: #000;
+  --button-text-color: #fff;
+  --submit-btn-background: #F29C39;
+  --submit-btn-text-color: #fff;
+  --warning-form-color: #d0db32;
+  --error-form-color: red;
+  --success-form-color: #1dc254;
+  --placeholder-text-color: #897373;
+
+  --guess-too-high-color: #E00000;
+  --guess-too-low-color: #FF8400;
+  --guess-correct-color: #4BBD85;
+}
+
+body {
+  margin: 0;
+  font-size: var(--font-size);
+  font-family: var(--font-family);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('./assets/ice.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  object-fit: cover;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+}
+
+
+.btn {
+  display: inline-block;
+  background-color: var(--background-button-color);
+  color: var(--button-text-color);
+  font-family: var(--font-family);
+  font-weight: 700;
+}
+
+.btn:hover,
+.btn:focus {
+  color: var(--submit-btn-text-color);
+  background-color: var(--submit-btn-background);
+}

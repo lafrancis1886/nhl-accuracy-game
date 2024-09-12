@@ -1,0 +1,32 @@
+
+.spinner-container {
+    position:relative;
+    z-index: 10;
+}
+
+@keyframes spin {
+    from {
+        transform:rotateY(0deg);
+    }
+    25% {
+        transform:rotateY(90deg)
+    }
+    50% {
+        transform:rotateY(180deg)
+    }
+    75% {
+        transform:rotateY(270deg)
+    }
+    to {
+        transform:rotateY(360deg),
+    }
+}
+.spinner-img {
+    animation-name: spin;
+    animation-timing-function: linear;
+    animation-delay: 0;
+    animation-duration: 1000ms;
+    animation-iteration-count: infinite;
+    animation-direction:normal;
+    animation-play-state: paused;
+}

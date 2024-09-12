@@ -1,0 +1,143 @@
+
+/*******************
+** Layout 
+************/
+
+.nhl-container-header {
+    padding: 1em 2em 1em 1em;
+    border: 1px solid ;
+    display: grid;
+    grid-template-columns: 52px minmax(200px, 350px);
+    grid-template-rows: 52px 4fr;
+    grid-gap: 0;
+    background-color: #fff;
+    .icon-image {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+    }
+    
+    .nhl-container-header-children {
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+    }
+}
+
+.nhl-form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    font-family: var(--font-family);
+    color: var(--text-color);
+
+
+    .nhl-form {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        font-family: var(--font-family);
+        color: var(--text-color);
+        width: 100%;
+
+        .input-icon {
+            position: relative;
+            top:27px;
+            left: 5px;
+            color:var(--placeholder-text-color);
+            cursor:pointer;
+        }
+        .nhl-form-label {
+            margin-bottom: .25em;
+        }
+        .nhl-form-input {
+            margin-bottom: .5em;
+        }
+
+        .nhl-form-label {
+            position:relative;
+            top:30px;
+            left: 25px;
+            z-index:10;
+            background-color: #fff;
+            font-size: 1rem;
+            font-weight: 700;
+        }
+
+        .nhl-form-input {
+            font-family: var(--font-family);
+            font-size: 1rem;
+            padding-top: .5em;
+            padding-bottom: .5em;
+            padding-left: 25px;
+            appearance: none;
+            border: 1px solid #000/*var(--board-background-color)*/;
+            border-radius: 8px;
+            width: 100%;
+        }
+
+        .nhl-form-input::placeholder {
+            color: var(--placeholder-text-color);
+        }
+        .nhl-form-input:not(:placeholder-shown):valid{
+            outline-color: var(--success-form-color);
+        }
+
+        .nhl-form-input:not(:placeholder-shown):invalid {
+            outline-color: var(--error-form-color);
+            border: 2px solid var(--error-form-color);
+        }
+
+        .nhl-form-input:focus:invalid {
+            outline-color: var(--warning-form-color);
+        }
+
+
+        .submit-btn {
+            cursor: pointer;
+            padding-top: .2em;
+            padding-bottom: .2em;
+            display: inline-block;
+            color: var(--button-text-color);
+            font-family: var(--font-family);
+            font-weight: 700;
+            font-size: 1.25rem;
+            border: none;
+            border-radius: 10px;
+            width: 100%;
+            margin-top: 1em;
+            margin-bottom: 1em;
+            background: linear-gradient(to right, var(--submit-btn-background), var(--background-button-color));
+            transform: scale(1.0);
+            transition: transform 250ms;
+        }
+
+        .submit-btn:hover,
+        .submit-btn:focus {
+            transform: scale(1.1);
+        }
+
+    }
+
+    .create-user-btn,
+    .link-to-login {
+        color: #000;
+        opacity: .75;
+        font-size: .65rem;
+        text-decoration: underline;
+        background-color: #fff;
+        border: 0;
+        margin: 0;
+        padding: 0;
+        padding-top: .5em;
+        outline: none;
+        cursor: pointer;
+    }
+
+    .link-to-login:hover,
+    .link-to-login:focus,
+    .create-user-btn:hover,
+    .create-user-btn:focus {
+        color: var(--submit-btn-background);
+    }
+}
