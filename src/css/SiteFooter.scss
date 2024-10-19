@@ -1,0 +1,16 @@
+.site-footer-container {
+    grid-column: 2 / 3;
+    order: 3;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1em 0;
+    padding: 0;
+}
+
+.version,
+.developer {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #00000060;
+}

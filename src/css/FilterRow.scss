@@ -1,0 +1,133 @@
+/***********
+** Typogrophy
+******/
+
+
+/*************
+** Layout
+********/
+
+.filter-row-label {
+    cursor: pointer;
+}
+.t-label {
+    cursor:pointer;
+    position:relative;
+    z-index:50;
+    display: block;
+    height: 30px;
+    width:30px;
+    border: 1px solid magenta;
+    border-radius: 100%;
+}
+
+.target-team-label {
+    top: 30px;
+    left: 1px;
+}
+
+.target-cal-label {
+    top: 22px;
+    left:-4px;
+}
+
+.filter-row-container-checked {
+    background-color: var(--submit-btn-background);
+    border: 1px solid var(--submit-btn-background);
+    border-radius: 10px;
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+.checkmark {
+    color: var(--submit-btn-background);
+    position:relative;
+    left: 12px;
+    top:1px;
+    z-index: 30;
+    cursor:pointer;
+}
+
+.show-checkbox {
+    border-top: 1px solid var(--submit-btn-background);
+    position:relative;
+    top: .65px;
+    left: -2px;
+    cursor:pointer;
+}
+
+.hide-filter-icon {
+    display:none;
+}
+
+
+.filter-row-container-unchecked {
+    color: #000;
+    margin-bottom:5px;
+
+}
+
+.hidden-checkmark {
+    display: none;
+}
+
+.hide-checkbox {
+    display: none;
+}
+
+.show-team-filter-icon {
+    width: 25px;
+    height: 25px;
+    position:relative;
+    top: 5px;
+    cursor: pointer;
+}
+
+.show-cal-filter-icon {
+    width: 20px;
+    height: 20px;
+    padding:.2em;
+    position: relative;
+    top: 1px;
+    cursor:pointer;
+}
+
+.left-shot-background,
+.right-shot-background,
+.wing-position-background,
+.center-position-background,
+.defense-position-background {
+    border-radius: 100%;
+}
+
+.left-shot-background {
+    background-color: #03973E80;
+}
+
+.right-shot-background {
+    background-color: #2400FF80;
+}
+
+.wing-position-background {
+    background-color: #FF000080;
+}
+
+.center-position-background {
+    background-color: #FF00B880;
+}
+
+.defense-position-background {
+    background-color: #AEEC0080;
+}
+.fa-regular.fa-square {
+    background-color: #fff;
+    border: none;
+    border-radius: 2px;
+    padding:none;
+    margin:none;
+}
+
+.filter-row-checkbox {
+    opacity: 0;
+    appearance: none;
+}

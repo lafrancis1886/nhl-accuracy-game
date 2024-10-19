@@ -1,0 +1,30 @@
+@mixin inputIcon($placeholder-color: var(--placeholder-text-color), $top: 27px, $left: 5px) {
+    position: relative;
+    top: $top;
+    left: $left;
+    color: $placeholder-color;
+    cursor:pointer;
+}
+
+@mixin formLabel($background-color: #fff, $top: 30px) {
+    position:relative;
+    top: $top;
+    left: 25px;
+    background-color: $background-color;
+    padding-left: 2px;
+    padding-right: 2px;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+@mixin formInput($border-color: #000) {
+    font-family: var(--font-family);
+    font-size: 1rem;
+    padding-top: .5em;
+    padding-bottom: .5em;
+    padding-left: 25px;
+    appearance: none;
+    border: 1px solid $border-color;
+    border-radius: 8px;
+    width: 100%;
+}

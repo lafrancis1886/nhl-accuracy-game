@@ -1,5 +1,5 @@
 import React from 'react'
-import './ContainerHeader.scss'
+import './css/ContainerHeader.scss'
 import nhlImage from './assets/nhl_internal.svg'
 
 export default class ContainerHeader extends React.Component {

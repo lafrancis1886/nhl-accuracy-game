@@ -1,6 +1,7 @@
 import React from 'react'
-import './LogInForm.scss'
+import './css/LogInForm.scss'
 import Spinner from './Spinner'
+import { bindAllNonReactPrototypeMethods } from './util/util'
 
 export default class LogInForm extends React.Component {
     constructor(props) {
@@ -8,11 +9,8 @@ export default class LogInForm extends React.Component {
         this.formRef = React.createRef()
         this.emailRef = React.createRef()
         this.passwordRef = React.createRef()
-        this.handleFormChange = this.handleFormChange.bind(this)
-        this.handleSubmit = this.handleSubmit.bind(this)
-        this.handleCreateUserToggle = this.handleCreateUserToggle.bind(this)
-        this.setSpinnerPosition = this.setSpinnerPosition.bind(this)
-        this.handleIconClick = this.handleIconClick.bind(this)
+
+        bindAllNonReactPrototypeMethods(this)
     }
 
 
@@ -32,7 +30,7 @@ export default class LogInForm extends React.Component {
     }
 
     handleCreateUserToggle(event) {
-        this.props.onCreateUserToggle(event)
+        this.props.onNavigateToCreateAccount(event)
     }
 
     setSpinnerPosition() {
@@ -62,7 +60,7 @@ export default class LogInForm extends React.Component {
         }
     }
     render() {
-        return (<div className="nhl-form-container login-form-container">
+        return (<main className="nhl-form-container login-form-container">
                     <form ref={this.formRef}onSubmit={this.handleSubmit} className="nhl-form login-form">                  
                         <label className="nhl-form-label login-email-label" htmlFor="email-input">Email</label>
                         <i className="fa-regular fa-envelope input-icon" data-inputicon="email-input" onClick={this.handleIconClick}></i>
@@ -70,10 +68,10 @@ export default class LogInForm extends React.Component {
                         <label className="nhl-form-label login-password-label" htmlFor="password-input">Password</label>
                         <i className="fa-solid fa-lock input-icon" data-inputicon="password-input" onClick={this.handleIconClick}></i>
                         <input ref={this.passwordRef} className="nhl-form-input" id="password-input" name="password" type="password" placeholder="Password" value={this.props.formData.password} onChange={this.handleFormChange} minLength="10" required/>
-                        {this.props.hasError && <span className="login-error-message">Error: no user found with this email and password. Please try again with different credentials.</span>}
+                        {this.props.hasError && <span className="login-error-message">Error: no user found with this email and password. Please try again with different credentials or create an account.</span>}
                         {this.props.isLoading ?  <Spinner left={this.setSpinnerPosition()}/> : <button className="btn submit-btn" type="submit">Login</button>}
                     </form>
-                    <button className="create-user-btn" onClick={this.handleCreateUserToggle}>Create an account</button>
-                </div>)
+                    <a className="create-user-btn" href="/createUser" onClick={this.handleCreateUserToggle}>Create an account</a>
+                </main>)
     }
 }

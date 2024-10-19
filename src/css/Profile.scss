@@ -1,0 +1,115 @@
+/****************
+** Typogrophy
+********/
+
+
+/****************
+** Layout
+********/
+.profile-page-container {
+    grid-column: 1 / 4;
+    .profile-hero-section {
+        background-image: url('../assets/gagne-hero.jpg');
+        background-color: #000000b5;
+        background-blend-mode:multiply;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        min-height: 350px;
+        display:grid;
+        grid-template-columns: 2fr 1fr;
+        grid-template-rows: 50px 100px 100px 70px;
+        grid-gap: 1em;
+        .profile-welcome,
+        .profile-join-date {
+            grid-column: 1 / 2;
+            padding-left: 1em;
+            color: var(--submit-btn-background);
+        }
+
+        .profile-welcome {
+            grid-row: 2 / 3;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0;
+        }
+        .profile-join-date {
+            grid-row: 3 / 4;
+            font-size: 1.125rem;
+            font-weight: 300;
+            padding-left: 2em;
+            margin-top: 0;
+
+            .join-date-style {
+                color: #fff;
+            }
+        }
+
+        .go-play-button {
+            margin-left: 2em;
+            margin-bottom: 2em;
+            grid-column: 1 / 2;
+            grid-row: 4 / 5;
+            display: inline-block;
+            border: 1px solid var(--submit-btn-background);
+            border-radius: 10px;
+            background-color: transparent;
+            color: #fff;
+            font-weight: 700;
+            font-size: 1.125rem;
+            padding: .25em .6em;
+            width: 100px;
+            cursor:pointer;
+
+            .go-play-link {
+                color: #fff;
+                text-decoration: none;
+            }
+        }
+        .go-play-button:hover,
+        .go-play-button:focus {
+            background-color: var(--submit-btn-background);
+        }
+    }
+
+    .profile-content-section {
+        padding-left: 2em;
+        padding-top: 4em;
+
+        .profile-header {
+            grid-column: 2 \ 3;
+            display: flex;
+            align-items: center;
+            .profile-title {
+                font-size: 1.125rem;
+                font-weight: 700;
+                color: #000;
+                padding: 0;
+                margin: 0;
+            }
+    
+            .edit-profile-button {
+                display: inline-block;
+                margin-left: 20px;
+                border: 1px solid var(--submit-btn-background);
+                border-radius: 10px;
+                padding: .35em .75em;
+                background-color: #fff;
+                color: var(--submit-btn-background);
+                font-weight: 700;
+                cursor: pointer;
+            }
+
+            .edit-profile-button:hover,
+            .edit-profile-button:focus {
+                color: #fff;
+                background-color: var(--submit-btn-background);
+            }
+        }
+
+        .profile-form {
+            width: 50vw;
+        }
+    }
+}
+

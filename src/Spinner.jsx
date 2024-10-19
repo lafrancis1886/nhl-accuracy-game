@@ -1,6 +1,6 @@
 import React from 'react'
 import spinner from './assets/spinner.svg'
-import './Spinner.scss'
+import './css/Spinner.scss'
 
 export default class Spinner extends React.Component {
     constructor(props) {

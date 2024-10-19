@@ -1,0 +1,50 @@
+.bellow-container {
+
+    .bellow-header-section {
+        display: flex;
+        padding-left: .5em;
+        justify-content: flex-start;
+        align-items: center;
+        font-size: 1.125rem;
+        font-weight: 700;
+        border: 1px solid #000;
+        border-radius: 10px;
+        cursor: pointer;
+        .bellow-header-expand-collapse-icon.is-closed {
+            .fa-solid.fa-plus {
+                opacity: 1;
+                transform: rotate(0);
+                transition: transform 500ms;
+            }
+            .fa-solid.fa-minus {
+                opacity: 0;
+                position: relative;
+                left: -15px;
+                transform: rotate(360deg);
+            }
+        }
+        .bellow-header-expand-collapse-icon.is-open {
+            .fa-solid.fa-plus {
+                opacity: 0;
+                transform: rotate(360deg);
+            }
+            .fa-solid.fa-minus {
+                opacity: 1;
+                position: relative;
+                left: -15px;
+                transform: rotate(0);
+                transition: transform 500ms;
+            }
+        }
+    }
+
+    .bellow-items-section {
+        display: grid;
+        grid-template-rows: 0fr;
+        transition: grid-template-rows 500ms;
+    }
+
+    .bellow-items-section.is-open {
+        grid-template-rows: 1fr;
+    }
+}

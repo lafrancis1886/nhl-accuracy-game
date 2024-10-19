@@ -1,6 +1,7 @@
 import React from 'react'
 import Spinner from './Spinner'
-import './SignUpForm.scss'
+import './css/SignUpForm.scss'
+import { bindAllNonReactPrototypeMethods} from './util/util'
 
 export default class SignUpForm extends React.Component {
     constructor(props) {
@@ -11,11 +12,8 @@ export default class SignUpForm extends React.Component {
         this.lastNameRef = React.createRef()
         this.emailRef = React.createRef()
         this.passwordRef = React.createRef()
-        this.handleFormChange = this.handleFormChange.bind(this)
-        this.handleSubmit = this.handleSubmit.bind(this)
-        this.handleLoginToggle = this.handleLoginToggle.bind(this)
-        this.positionSpinner = this.positionSpinner.bind(this)
-        this.handleIconClick = this.handleIconClick.bind(this)
+
+        bindAllNonReactPrototypeMethods(this)
     }
 
     handleFormChange(event) {
@@ -34,7 +32,7 @@ export default class SignUpForm extends React.Component {
     }
 
     handleLoginToggle(event) {
-        this.props.onLoginToggle(event)
+        this.props.onNavigateToLogin(event)
     }
 
     positionSpinner() {
@@ -68,25 +66,26 @@ export default class SignUpForm extends React.Component {
     }
     render() {
         return (
-            <div className="nhl-form-container create-user-form-container">
+            <main className="nhl-form-container create-user-form-container">
                 <form ref={this.formRef}onSubmit={this.handleSubmit} className="nhl-form create-user-form">
                     <label className="nhl-form-label first-name-label" htmlFor="first-name-input">First Name</label>
-                    <i className="fa-solid fa-signature input-icon" data-inputicon="first-name-input" onClick={this.handleIconClick}></i>
-                    <input ref={this.firstNameRef} className="nhl-form-input" id="first-name-input" name="firstName" placeholder="First Name" type="text" pattern="\w{2,16}" value={this.props.formData.firstName} onChange={this.handleFormChange} required />
+                    <i className={`fa-solid fa-signature ${this.props.readOnlyMode ? 'hide-input-icon' : 'input-icon'}`} data-inputicon="first-name-input" onClick={this.handleIconClick}></i>
+                    <input ref={this.firstNameRef} className="nhl-form-input" id="first-name-input" name="firstName" placeholder="First Name" type="text" pattern="\w{2,16}" value={this.props.formData.firstName} onChange={this.handleFormChange} required readOnly={this.props.readOnlyMode}/>
                     <label className="nhl-form-label last-name-label" htmlFor="last-name-input">Last Name</label>
-                    <i className="fa-solid fa-signature input-icon" data-inputicon="last-name-input" onClick={this.handleIconClick}></i>
-                    <input ref={this.lastNameRef} className="nhl-form-input" id="last-name-input" name="lastName" placeholder="Last Name" type="text" pattern="\w{2,16}" value={this.props.formData.lastName} onChange={this.handleFormChange} required />
+                    <i className={`fa-solid fa-signature ${this.props.readOnlyMode ? 'hide-input-icon' : 'input-icon'}`} data-inputicon="last-name-input" onClick={this.handleIconClick}></i> 
+                    <input ref={this.lastNameRef} className="nhl-form-input" id="last-name-input" name="lastName" placeholder="Last Name" type="text" pattern="\w{2,16}" value={this.props.formData.lastName} onChange={this.handleFormChange} required readOnly={this.props.readOnlyMode}/>
                     <label className="nhl-form-label email-label" htmlFor="email-input">Email</label>
-                    <i className="fa-regular fa-envelope input-icon" data-inputicon="email-input" onClick={this.handleIconClick}></i>
-                    <input ref={this.emailRef} className="nhl-form-input" id="email-input" name="email" type="email" placeholder="Email" value={this.props.formData.email} onChange={this.handleFormChange} required />
+                    <i className={`fa-regular fa-envelope ${this.props.readOnlyMode ? 'hide-input-icon' : 'input-icon'}`} data-inputicon="email-input" onClick={this.handleIconClick}></i> 
+                    <input ref={this.emailRef} className="nhl-form-input" id="email-input" name="email" type="email" placeholder="Email" value={this.props.formData.email} onChange={this.handleFormChange} required readOnly={this.props.readOnlyMode}/>
                     <label className="nhl-form-label password-label" htmlFor="password-input">Password</label>
-                    <i className="fa-solid fa-lock input-icon" data-inputicon="password-input" onClick={this.handleIconClick}></i>
-                    <input ref={this.passwordRef} className="nhl-form-input" id="password-input" name="password" type="password" minLength="10" placeholder="Password" value={this.props.formData.password} onChange={this.handleFormChange} required />
+                    <i className={`fa-solid fa-lock ${this.props.readOnlyMode ? 'hide-input-icon' : 'input-icon'}`} data-inputicon="password-input" onClick={this.handleIconClick}></i> 
+                    <input ref={this.passwordRef} className="nhl-form-input" id="password-input" name="password" type="password" minLength="10" placeholder="Password" value={this.props.formData.password} onChange={this.handleFormChange} required readOnly={this.props.readOnlyMode}/>
                     {this.props.hasError && <span className="create-user-error">Please ensure all fields are filled out before submitting form.</span>}
-                    {this.props.isLoading ? <Spinner left={this.positionSpinner()} />  : <button className="submit-btn" type="submit">Create Account</button>}
+                    {this.props.isLoading && <Spinner left={this.positionSpinner()} /> }
+                    {!this.props.isLoading && !this.props.readOnlyMode && <button className="submit-btn" type="submit">{this.props.buttonText}</button>}
                 </form>
-                <button className="link-to-login" onClick={this.handleLoginToggle}>Already have an account? Login here</button>
-            </div>
+                {this.props.showLoginLink && <a className="link-to-login" href="/login" onClick={this.handleLoginToggle}>Already have an account? Login here</a>}
+            </main>
         )
     }
 }

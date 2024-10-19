@@ -1,0 +1,59 @@
+/***********
+** Typogrophy
+*******/
+.empty-set-icon {
+    height: 80px;
+    width: 80px;
+    fill: var(--submit-btn-background);
+    stroke: var(--submit-btn-background);
+}
+
+.empty-set-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #000;
+}
+
+.empty-set-description {
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.6;
+    color: #000;
+}
+
+.filter-reset-btn {
+    display: inline-block;
+    padding: .25em .75em;
+    border: 1px solid var(--submit-btn-background);
+    border-radius: 10px;
+    color: var(--submit-btn-background);
+    background-color: #fff;
+    font-size: 1.125rem;
+    font-weight: 700;
+    box-shadow: 0 10px 0 var(--submit-btn-background);
+    cursor: pointer;
+}
+
+.filter-reset-btn:hover,
+.filter-reset-btn:focus {
+    color: #fff;
+    background-color: var(--submit-btn-background);
+}
+
+/***********
+** Layout
+********/
+
+.empty-search-section {
+    background-color: #fff;
+    grid-column: 1 / 2;
+    display: flex;
+    flex-direction: column;
+    padding: 2em;
+}
+
+.empty-search-section > * {
+    margin-left: auto;
+    margin-right: auto;
+}
+

@@ -1,0 +1,18 @@
+/**************
+** Layout
+********/
+.nhl-accuracy-game-container {
+    display: grid;
+    grid-template-columns: 2em 1fr 2em;
+}
+
+.filter-and-grid-container {
+    grid-column: 1 / -1;
+    background-color: var(--main-background-color);
+    display: grid;
+    grid-template-columns: 2em 1fr 2em;
+}
+
+.filter-and-grid {
+    grid-column: 2 / 3;
+}

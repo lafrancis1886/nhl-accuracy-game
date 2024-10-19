@@ -12,6 +12,7 @@
   --error-form-color: red;
   --success-form-color: #1dc254;
   --placeholder-text-color: #897373;
+  --main-background-color: #d9d9d930;
 
   --guess-too-high-color: #E00000;
   --guess-too-low-color: #FF8400;
@@ -32,12 +33,12 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url('./assets/ice.jpg');
+  background-image: url('../assets/ice.jpg');
   background-position: center;
   background-repeat: no-repeat;
   object-fit: cover;
-  height: 100vh;
-  width: 100vw;
+  min-height: 100vh;
+  min-width: 100%;
   margin: 0;
 }
 

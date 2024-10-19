@@ -1,0 +1,72 @@
+/***********
+** Typogrophy
+******/
+
+
+/*************
+** Layout
+********/
+
+.player-grid-header {
+    display:flex;
+    margin:0;
+    padding:0;
+    .player-count-status {
+        margin-left: auto;
+        margin-bottom:0;
+        margin-top:18.72px;
+        padding-bottom: 0;
+        color: #000000af;
+        font-size: 1.125rem;
+    }
+}
+
+.player-container {
+    border: none;
+    border-radius: 10px;
+    background-color: #fff;
+    padding: .5em;
+    cursor:pointer;
+    height: min-content;
+
+    .player-card-grid {
+        display:grid;
+        grid-template-columns: 5fr 1fr 1fr;
+        grid-template-rows: 1fr .2fr; /*calc(154px - 2em)*/
+        text-decoration: none;
+        color: #000;
+        .player-img {
+            grid-column: 1 / 6;
+            grid-row: 1 / 2;
+            object-fit: cover;
+            display: block;
+            border-radius: 10px;
+            width: 100%;
+            height: 100% /*calc(184px - 2em - 30px)*/;
+        }
+
+        .player-name {
+            grid-column: 1 / 2;
+            grid-row: 2 / 3;
+            font-weight: 700;
+            font-size: 1.125rem;
+            font-family: var(--font-family);
+            margin:.5em 0;
+            padding: 0;
+        }
+
+        .position-codes {
+            grid-column: 2 / 3;
+            grid-row: 2 / 3;
+        }
+
+        .player-shoots {
+            grid-column: 3 / 4;
+            grid-row: 2 / 3;
+        }
+    }
+}
+
+.player-container:hover {
+    background-color: var(--submit-btn-background);
+}

@@ -1,0 +1,59 @@
+/***************
+** Layout
+**************/
+
+.carousel-outer-container {
+    grid-column: 2 / 3;
+    display: grid;
+    padding:.5em;
+    grid-gap: .5em;
+
+    .carousel-title-section {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+        text-align: center;
+        margin-top: 0;
+    }
+
+    .carousel-left-control-section,
+    .carousel-right-control-section {
+        grid-row: 2 / 3;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .carousel-control-button {
+            background-color: #fff;
+            border: none;
+            cursor:pointer;
+            margin: 0;
+            font-size: 2rem;
+            color: #00000080;
+        }
+        .carousel-control-button:hover,
+        .carousel-control-button:focus {
+            color: #000;
+        }
+
+    }
+
+    .carousel-left-control-setion {
+        grid-column: 1 / 2;
+    }
+
+    .carousel-right-control-section {
+        grid-column: 3 / 4;
+    }
+
+    .carousel-inner-container {
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+    }
+
+    .carousel-dots-container {
+        grid-column: 2 / 3;
+        grid-row: 3 / 4;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}

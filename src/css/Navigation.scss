@@ -1,0 +1,42 @@
+/***************
+** Typology
+*******/
+.header-btn {
+    font-size: 2em;
+    border: 0;
+    background-color: #fff;
+    color: #000;
+    display: inline-block;
+    cursor: pointer;
+}
+
+
+.header-btn:hover,
+.header-btn:focus,
+.navigation-link:hover,
+.navigation-link:focus {
+    color: var(--submit-btn-background);
+}
+
+
+.navigation-items {
+    list-style-type: none;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+.navigation-link {
+    color: #000;
+}
+
+.current-page.navigation-link {
+    color: var(--submit-btn-background);
+}
+/***************
+** Layout 
+********/
+
+
+.log-out-button {
+    margin-left: 1em;
+}

@@ -1,0 +1,16 @@
+.dot-button {
+    display: inline-block;
+    padding: .25em;
+    margin: .25em;
+    border: none;
+    background-color: #fff;
+    color: #00000080;
+    font-weight: 700;
+    font-size: .5rem;
+    cursor: pointer;
+}
+
+.dot-button:hover,
+.dot-button:focus {
+    color: #000;
+}

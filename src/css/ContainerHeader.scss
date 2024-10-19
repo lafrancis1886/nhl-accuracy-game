@@ -1,4 +1,4 @@
-
+@use 'form-mixins';
 /*******************
 ** Layout 
 ************/
@@ -41,11 +41,10 @@
         width: 100%;
 
         .input-icon {
-            position: relative;
-            top:27px;
-            left: 5px;
-            color:var(--placeholder-text-color);
-            cursor:pointer;
+            @include form-mixins.inputIcon(var(--placeholder-text-color));
+        }
+        .hide-input-icon {
+            opacity: 0;
         }
         .nhl-form-label {
             margin-bottom: .25em;
@@ -55,25 +54,11 @@
         }
 
         .nhl-form-label {
-            position:relative;
-            top:30px;
-            left: 25px;
-            z-index:10;
-            background-color: #fff;
-            font-size: 1rem;
-            font-weight: 700;
+            @include form-mixins.formLabel(#fff);
         }
 
         .nhl-form-input {
-            font-family: var(--font-family);
-            font-size: 1rem;
-            padding-top: .5em;
-            padding-bottom: .5em;
-            padding-left: 25px;
-            appearance: none;
-            border: 1px solid #000/*var(--board-background-color)*/;
-            border-radius: 8px;
-            width: 100%;
+            @include form-mixins.formInput(#000)
         }
 
         .nhl-form-input::placeholder {
@@ -92,6 +77,9 @@
             outline-color: var(--warning-form-color);
         }
 
+        .nhl-form-input:read-only {
+            border: none;
+        }
 
         .submit-btn {
             cursor: pointer;
